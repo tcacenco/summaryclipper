@@ -1,0 +1,15 @@
+services:
+  summaryclipper_api:
+    build:
+      context: ./summaryclipper_api
+      dockerfile: Dockerfile
+    image: summaryclipper_api
+    container_name: summaryclipper_api
+    ports:
+      - "${PORT}:${PORT}"
+    expose:
+      - "${PORT}"
+    restart: always
+    environment:
+      - "OPENAI_API_KEY=${OPENAI_API_KEY}"
+      - "PORT=${PORT}"
