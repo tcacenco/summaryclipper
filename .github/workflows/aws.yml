@@ -33,7 +33,7 @@ on:
 env:
   AWS_REGION: sa-east-1                               # set this to your preferred AWS region, e.g. us-west-1
   ECR_REPOSITORY: summaryclipper_api                  # set this to your Amazon ECR repository name
-  ECS_SERVICE: 10f6f6af15e84f1d8661c261c237dbe0       # set this to your Amazon ECS service name
+  ECS_SERVICE: summaryclipper-service                 # set this to your Amazon ECS service name
   ECS_CLUSTER: summaryclipper-cluster                 # set this to your Amazon ECS cluster name
   ECS_TASK_DEFINITION: .aws/api-task-definition.json  # set this to the path to your Amazon ECS task definition
   CONTAINER_NAME: summaryclipper-container            # set this to the name of the container in the
