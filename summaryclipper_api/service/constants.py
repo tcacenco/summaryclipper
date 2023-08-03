@@ -1,6 +1,6 @@
 import os
 
-ROOT_MESSAGE = "Welcome to Summary Clipper"
+ROOT_MESSAGE = "Welcome to Summary Clipper. This is the root node of the API. Please refer to the documentation for more information."
 
 VIDEO_EXTENSION = ".mp4"
 AUDIO_EXTENSION = ".mp3"
