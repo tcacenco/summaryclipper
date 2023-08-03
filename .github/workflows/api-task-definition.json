@@ -1,0 +1,34 @@
+{
+    "family": "summaryclipper-task",
+    "containerDefinitions": [
+        {
+            "name": "summaryclipper-container",
+            "image": "985533677496.dkr.ecr.sa-east-1.amazonaws.com/summaryclipper_api:latest",
+            "cpu": 1024,
+            "memory": 1792,
+            "portMappings": [
+                {
+                    "containerPort": 8080,
+                    "hostPort": 8080,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true,
+            "entryPoint": [],
+            "command": [],
+            "environment": [],
+            "mountPoints": [],
+            "volumesFrom": []
+        }
+    ],
+    "executionRoleArn": "arn:aws:iam::985533677496:role/ecsTaskExecutionRole",
+    "requiresCompatibilities": [
+        "EC2"
+    ],
+    "cpu": "2048",
+    "memory": "1792",
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    }
+}
