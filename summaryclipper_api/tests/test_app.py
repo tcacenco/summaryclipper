@@ -2,10 +2,18 @@ import unittest
 import os
 import sys
 
-# setting path to the root directory to import the modules
-sys.path.append(os.path.join(__file__, "..", ".."))
-sys.path.append(os.path.join(__file__, ".."))
-os.chdir(os.path.dirname(os.path.dirname(__file__)))
+# Setting path to the root directory to import the modules
+# --------------------------------------------------------------------
+# Get the absolute path to the directory containing this script
+current_directory = os.path.dirname(os.path.abspath(__file__))
+
+# Add the parent directory to sys.path (to import modules from there)
+parent_directory = os.path.dirname(current_directory)
+sys.path.append(parent_directory)
+
+# Change the working directory to the parent directory
+os.chdir(parent_directory)
+# --------------------------------------------------------------------
 
 
 class TestApp(unittest.TestCase):
