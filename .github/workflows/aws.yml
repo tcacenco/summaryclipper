@@ -45,7 +45,7 @@ permissions:
 jobs:
   test:
     name: Test
-    runs-on: ubuntu:20.04
+    runs-on: ubuntu-20.04
     environment: production
 
     steps:
@@ -80,8 +80,9 @@ jobs:
 
 
   deploy:
+    needs: test
     name: Deploy
-    runs-on: ubuntu:20.04
+    runs-on: ubuntu-20.04
     environment: production
 
     steps:
