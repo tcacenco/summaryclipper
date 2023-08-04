@@ -67,7 +67,7 @@ jobs:
         sudo apt-get update
 
         python3 -m pip install --upgrade pip
-        python3 -m pip install -r requirements.txt
+        python3 -m pip install -r summaryclipper_api/requirements.txt
 
     - name: Run Unit Tests
       id: run-unit-tests
