@@ -1,6 +1,13 @@
+# Application
 Flask==2.2.3
 openai==0.27.2
 pytube==15.0.0
 pydub==0.25.1
 openai-whisper==20230314
 python-dotenv==1.0.0
+
+# Testing
+coverage==7.2.2
+responses==0.23.1
+mock==4.0.3
+unittest2==1.1.0

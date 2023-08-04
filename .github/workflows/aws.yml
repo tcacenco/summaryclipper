@@ -43,9 +43,45 @@ permissions:
   contents: read
 
 jobs:
+  test:
+    name: Test
+    runs-on: ubuntu:20.04
+    environment: production
+
+    steps:
+    - name: Install Requirements
+      id: install-requirements
+      run: |
+        sudo apt-get update
+        sudo apt-get install ca-certificates -y
+        sudo apt-get install -y software-properties-common
+        sudo apt-get install python3.9 -y
+        sudo apt-get -y install python3-pip
+        sudo apt-get install -y curl
+        sudo apt-get install -y git
+        sudo apt-get install ffmpeg -y
+        sudo apt-get clean
+        sudo apt-get update
+        python3 -m pip install --upgrade pip
+        python3 -m pip install -r requirements.txt
+
+    - name: Run Unit Tests
+      id: run-unit-tests
+      run: |
+        python3 -m coverage run -m unittest discover --start-directory 'summaryclipper_api/tests' --pattern 'test*.py'
+        python3 -m coverage xml
+
+    - name: Publish Test Results
+      uses: EnricoMi/publish-unit-test-result-action@v2
+      if: always()
+      with:
+        files: |
+          coverage.xml
+
+
   deploy:
     name: Deploy
-    runs-on: ubuntu-latest
+    runs-on: ubuntu:20.04
     environment: production
 
     steps:
