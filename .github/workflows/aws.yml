@@ -52,7 +52,6 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
-    steps:
     - name: Install Requirements
       id: install-requirements
       run: |
