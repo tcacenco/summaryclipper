@@ -3,9 +3,9 @@ import os
 import sys
 
 # setting path to the root directory to import the modules
-sys.path.append(__file__ + "/../..")
-sys.path.append(__file__ + "/..")
-# os.chdir(os.path.dirname(os.path.dirname(__file__)))
+sys.path.append(os.path.join(__file__, "..", ".."))
+sys.path.append(os.path.join(__file__, ".."))
+os.chdir(os.path.dirname(os.path.dirname(__file__)))
 
 
 class TestApp(unittest.TestCase):
