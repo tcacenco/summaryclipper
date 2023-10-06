@@ -22,4 +22,4 @@ RUN python3 -m pip install --no-cache-dir -r requirements.txt
 
 ADD . .
 
-CMD [ "python3", "main.py"]
+CMD [ "ddtrace-run" "python3", "main.py"]
