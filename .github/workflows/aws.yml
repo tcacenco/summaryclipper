@@ -36,7 +36,7 @@ env:
   ECS_SERVICE: summaryclipper-service                 # set this to your Amazon ECS service name
   ECS_CLUSTER: summaryclipper-cluster                 # set this to your Amazon ECS cluster name
   ECS_TASK_DEFINITION: .aws/api-task-definition.json  # set this to the path to your Amazon ECS task definition
-  CONTAINER_NAME: summaryclipper-container            # set this to the name of the container in the
+  CONTAINER_NAME: summaryclipper-api                  # set this to the name of the container in the
                                                       # containerDefinitions section of your task definition
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
