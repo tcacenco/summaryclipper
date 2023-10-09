@@ -3,8 +3,10 @@ from service.app_tools import extract_utils, text_utils
 import service.constants as const
 from flask import Flask, jsonify, request, make_response
 import flask
+from ddtrace import tracer
 
 
+@tracer.wrap(name="index")
 @application.route("/")
 def index():
     """
@@ -18,6 +20,7 @@ def index():
     return const.ROOT_MESSAGE
 
 
+@tracer.wrap(name="health")
 @application.route("/health", methods=["GET"])
 def health() -> flask.Response:
     """
@@ -30,6 +33,7 @@ def health() -> flask.Response:
     return make_response(jsonify(response), 200)
 
 
+@tracer.wrap(name="summarize_video")
 @application.route("/summarize_video", methods=["POST"])
 def summarize_video() -> flask.Response:
     """

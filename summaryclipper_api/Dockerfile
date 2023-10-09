@@ -2,7 +2,7 @@
 
 FROM ubuntu:20.04
 
-RUN apt-get update
+RUN apt-get update && apt-get upgrade -y
 RUN apt-get install ca-certificates -y
 RUN apt-get install -y software-properties-common
 RUN apt-get install python3.9 -y
