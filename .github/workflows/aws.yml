@@ -79,7 +79,8 @@ jobs:
 
         python3 -m pip install --upgrade pip
         python3 -m pip install -r summaryclipper_api/requirements.txt
-
+        timeout 60s ddtrace-run python3 main.py
+        
     - name: Run Unit Tests
       id: run-unit-tests
       run: |
