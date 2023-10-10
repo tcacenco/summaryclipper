@@ -11,7 +11,7 @@ RUN apt-get install -y curl
 RUN apt-get install -y git
 RUN apt-get install ffmpeg -y
 RUN apt-get clean
-RUN apt-get update
+RUN apt-get update && apt-get upgrade -y
 
 WORKDIR /summaryclipper_api/
 
@@ -22,4 +22,4 @@ RUN python3 -m pip install --no-cache-dir -r requirements.txt
 
 ADD . .
 
-CMD [ "ddtrace-run" "python3", "main.py"]
+CMD [ "ddtrace-run", "python3", "main.py" ]
